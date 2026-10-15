@@ -13,28 +13,13 @@ const ADDRESS = [
   "Hyderabad, Rangareddy, Telangana 500049",
 ];
 
-const MAP_QUERY = ADDRESS.join(", ");
-const MAP_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&output=embed`;
+const MAP_EMBED_URL =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97194.29103055871!2d78.2023861433594!3d17.49208919999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93bf2afb32d9%3A0xd1bd4bfab424b231!2sSri%20Krishna%20Vihar!5e1!3m2!1sen!2sin!4v1792066357999!5m2!1sen!2sin";
 
 const contactDetails = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "contact@axiwatt.com",
-    href: "mailto:contact@axiwatt.com",
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+91 95530 29624",
-    href: "tel:+919553029624",
-  },
-  {
-    icon: MapPin,
-    label: "Registered Office",
-    value: ADDRESS.join(", "),
-    href: undefined,
-  },
+  { icon: Mail, label: "Email", value: "contact@axiwatt.com", href: "mailto:contact@axiwatt.com" },
+  { icon: Phone, label: "Phone", value: "+91 95530 29624", href: "tel:+919553029624" },
+  { icon: MapPin, label: "Registered Office", value: ADDRESS.join(", "), href: undefined },
 ];
 
 const enquiryPoints = [
@@ -86,11 +71,7 @@ export default function Contact() {
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="company">Company</Label>
-                <Input
-                  id="company"
-                  name="company"
-                  autoComplete="organization"
-                />
+                <Input id="company" name="company" autoComplete="organization" />
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="email">Email</Label>
@@ -202,9 +183,13 @@ export default function Contact() {
             <iframe
               title="AxiWatt office location"
               src={MAP_EMBED_URL}
-              className="h-96 w-full border-0"
+              width="600"
+              height="450"
+              className="h-[450px] w-full border-0"
+              style={{ border: 0 }}
+              allowFullScreen
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
+              referrerPolicy="strict-origin-when-cross-origin"
             />
           </div>
         </div>
