@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Eye, Layers, Target } from "lucide-react";
+import { ArrowRight, BadgeCheck, Eye, Layers, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const certifications = [
+  "ISO 9001",
+  "ISO 14001",
+  "In Collaboration with MNRE",
+  "MSME Registered",
+  "UDYAM Registered",
+  "Govt. of India",
+];
 
 const principles = [
   {
@@ -72,6 +81,29 @@ export default function About() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-white py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <h2 className="text-4xl font-bold text-ink sm:text-5xl">
+              Certifications &amp; Registrations
+            </h2>
+          </div>
+          <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {certifications.map((certification) => (
+              <li
+                key={certification}
+                className="flex items-center gap-4 rounded-2xl border border-border bg-card px-6 py-5"
+              >
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-ink text-volt">
+                  <BadgeCheck className="h-5 w-5" strokeWidth={2} />
+                </span>
+                <span className="font-semibold text-ink">{certification}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
