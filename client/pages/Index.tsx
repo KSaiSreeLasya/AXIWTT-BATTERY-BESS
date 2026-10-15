@@ -59,7 +59,7 @@ const reasons = [
 ];
 
 const HERO_IMAGE_URL =
-  "https://cdn.builder.io/api/v1/image/assets%2Fa16b4d9292da4a3688fbc1ccfd166262%2Fc9e702b6c36641e8adb898cb1b5b7746?format=webp&width=800&height=1200";
+  "https://cdn.builder.io/api/v1/image/assets%2Fa16b4d9292da4a3688fbc1ccfd166262%2F097748926afd42f2abf981610dd1f686?format=webp&width=800&height=1200";
 
 function HeroVisual() {
   return (
