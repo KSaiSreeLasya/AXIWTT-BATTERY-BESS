@@ -27,7 +27,6 @@ export default function About() {
   return (
     <>
       <section className="relative overflow-hidden bg-ink text-white">
-        <div className="absolute -left-32 top-0 h-[28rem] w-[28rem] rounded-full bg-teal/25 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
           <p className="font-display text-sm font-semibold uppercase tracking-widest text-volt">
             About AxiWatt
@@ -59,9 +58,9 @@ export default function About() {
             {principles.map((principle) => (
               <article
                 key={principle.title}
-                className="rounded-2xl border border-border bg-card p-8 transition duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-xl hover:shadow-ink/5"
+                className="rounded-2xl border border-border bg-card p-8 transition duration-300 hover:border-ink/20 hover:shadow-md hover:shadow-ink/5"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-volt/25 text-ink">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-teal">
                   <principle.icon className="h-6 w-6" strokeWidth={2} />
                 </div>
                 <h2 className="mt-6 text-2xl font-semibold text-ink">

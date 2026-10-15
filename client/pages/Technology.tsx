@@ -50,10 +50,10 @@ export default function Technology() {
           {pillars.map((pillar, index) => (
             <article
               key={pillar.title}
-              className="group rounded-2xl border border-border bg-card p-8 transition duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-xl hover:shadow-ink/5 lg:p-10"
+              className="group rounded-2xl border border-border bg-card p-8 transition duration-300 hover:border-ink/20 hover:shadow-md hover:shadow-ink/5 lg:p-10"
             >
               <div className="flex items-start justify-between">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-volt/25 text-ink transition group-hover:bg-volt">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-teal">
                   <pillar.icon className="h-6 w-6" strokeWidth={2} />
                 </div>
                 <span className="font-display text-sm font-bold text-teal">

@@ -41,7 +41,7 @@ export default function Contact() {
             <ul className="mt-8 divide-y divide-border">
               {contactDetails.map((detail) => (
                 <li key={detail.label} className="flex items-center gap-5 py-5">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-volt/25 text-ink">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-secondary text-teal">
                     <detail.icon className="h-5 w-5" strokeWidth={2} />
                   </span>
                   <div>

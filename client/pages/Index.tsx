@@ -109,7 +109,6 @@ export default function Index() {
             backgroundSize: "56px 56px",
           }}
         />
-        <div className="absolute -right-40 -top-40 h-[36rem] w-[36rem] rounded-full bg-volt/15 blur-3xl" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
           <div>
@@ -170,9 +169,9 @@ export default function Index() {
             {solutions.map((solution) => (
               <article
                 key={solution.title}
-                className="group rounded-2xl border border-border bg-card p-7 transition duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-xl hover:shadow-ink/5"
+                className="group rounded-2xl border border-border bg-card p-7 transition duration-300 hover:border-ink/20 hover:shadow-md hover:shadow-ink/5"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-volt/25 text-ink transition group-hover:bg-volt">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-teal">
                   <solution.icon className="h-6 w-6" strokeWidth={2} />
                 </div>
                 <h3 className="mt-6 text-xl font-semibold text-ink">
