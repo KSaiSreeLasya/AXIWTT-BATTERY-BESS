@@ -63,7 +63,7 @@ const HERO_IMAGE_URL =
 
 function HeroVisual() {
   return (
-    <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl shadow-black/40">
+    <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl shadow-black/40">
       <img
         src={HERO_IMAGE_URL}
         alt="AxiWatt battery energy storage solution"
