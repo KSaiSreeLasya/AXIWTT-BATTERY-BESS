@@ -3,12 +3,10 @@ import { ArrowRight, BadgeCheck, Eye, Layers, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const certifications = [
-  "ISO 9001",
-  "ISO 14001",
-  "In Collaboration with MNRE",
-  "MSME Registered",
-  "UDYAM Registered",
-  "Govt. of India",
+  { title: "ISO 9001", detail: "Certified Quality Management" },
+  { title: "ISO 14001", detail: "Certified Quality Management" },
+  { title: "In Collaboration with MNRE", detail: null },
+  { title: "MSME Registered", detail: null },
 ];
 
 const principles = [
@@ -91,16 +89,25 @@ export default function About() {
               Certifications &amp; Registrations
             </h2>
           </div>
-          <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-14 grid gap-6 sm:grid-cols-2">
             {certifications.map((certification) => (
               <li
-                key={certification}
-                className="flex items-center gap-4 rounded-2xl border border-border bg-card px-6 py-5"
+                key={certification.title}
+                className="group flex items-start gap-5 rounded-2xl border border-border bg-card p-8 transition duration-300 hover:border-ink/20 hover:shadow-md hover:shadow-ink/5"
               >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-ink text-volt">
-                  <BadgeCheck className="h-5 w-5" strokeWidth={2} />
+                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-ink text-volt transition group-hover:scale-105">
+                  <BadgeCheck className="h-7 w-7" strokeWidth={2} />
                 </span>
-                <span className="font-semibold text-ink">{certification}</span>
+                <div>
+                  <h3 className="text-xl font-semibold text-ink">
+                    {certification.title}
+                  </h3>
+                  {certification.detail && (
+                    <p className="mt-2 text-sm font-medium text-muted-foreground">
+                      {certification.detail}
+                    </p>
+                  )}
+                </div>
               </li>
             ))}
           </ul>
