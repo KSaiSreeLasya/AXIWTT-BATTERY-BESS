@@ -1,16 +1,12 @@
-import {
-  Check,
-  BatteryCharging,
-  Car,
-  RadioTower,
-  RefreshCw,
-} from "lucide-react";
+import { Check } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
 
 const products = [
   {
-    icon: Car,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fa16b4d9292da4a3688fbc1ccfd166262%2Ffc280fb362594f43be3e8beb3454226a?format=webp&width=800&height=1200",
+    imageAlt: "High-voltage electric vehicle battery pack in a factory",
     title: "Automotive Battery Solutions",
     description:
       "Battery technologies for electric mobility and automotive applications, with a focus on energy efficiency, dependable operation, and performance.",
@@ -21,7 +17,9 @@ const products = [
     ],
   },
   {
-    icon: RadioTower,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fa16b4d9292da4a3688fbc1ccfd166262%2Feef427995b8844388c3aaa765767e0ae?format=webp&width=800&height=1200",
+    imageAlt: "Telecom backup battery racks in an equipment room",
     title: "Telecom Battery Solutions",
     description:
       "Backup battery solutions designed to support telecom towers, communication networks, and critical connectivity infrastructure.",
@@ -32,7 +30,9 @@ const products = [
     ],
   },
   {
-    icon: BatteryCharging,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fa16b4d9292da4a3688fbc1ccfd166262%2Fa85f262dc5534e0abaef38704f26354f?format=webp&width=800&height=1200",
+    imageAlt: "Battery energy storage container beside a solar and wind site",
     title: "Battery Energy Storage Systems (BESS)",
     description:
       "Energy storage solutions designed to support renewable energy integration, energy management, and reliable power availability.",
@@ -43,7 +43,9 @@ const products = [
     ],
   },
   {
-    icon: RefreshCw,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fa16b4d9292da4a3688fbc1ccfd166262%2F7b151e7b386d4ea0995f8c2bdf233fde?format=webp&width=800&height=1200",
+    imageAlt: "Comparison of a lead-acid battery bank and a compact LiFePO4 rack",
     title: "Lead Replacement Batteries",
     description:
       "Modern battery alternatives for suitable applications where improved energy efficiency, reduced maintenance, or different performance characteristics are required.",
@@ -97,12 +99,18 @@ export default function Products() {
           {products.map((product) => (
             <article
               key={product.title}
-              className="group rounded-2xl border border-border bg-card p-8 transition duration-300 hover:border-ink/20 hover:shadow-md hover:shadow-ink/5 lg:p-10"
+              className="group overflow-hidden rounded-2xl border border-border bg-card transition duration-300 hover:border-ink/20 hover:shadow-md hover:shadow-ink/5"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-teal">
-                <product.icon className="h-6 w-6" strokeWidth={2} />
+              <div className="aspect-[4/3] overflow-hidden bg-secondary">
+                <img
+                  src={product.image}
+                  alt={product.imageAlt}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
               </div>
-              <h2 className="mt-6 text-2xl font-semibold text-ink">
+              <div className="p-8 lg:p-10">
+              <h2 className="text-2xl font-semibold text-ink">
                 {product.title}
               </h2>
               <p className="mt-4 leading-relaxed text-muted-foreground">
@@ -126,6 +134,7 @@ export default function Products() {
                     </li>
                   ))}
                 </ul>
+              </div>
               </div>
             </article>
           ))}
