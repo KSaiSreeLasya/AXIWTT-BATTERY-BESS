@@ -58,41 +58,17 @@ const reasons = [
   },
 ];
 
-const chargeLevels = [100, 92, 84, 76, 64];
+const HERO_IMAGE_URL =
+  "https://cdn.builder.io/api/v1/image/assets%2Fa16b4d9292da4a3688fbc1ccfd166262%2Fc9e702b6c36641e8adb898cb1b5b7746?format=webp&width=800&height=1200";
 
-function BatteryVisual() {
+function HeroVisual() {
   return (
-    <div className="relative mx-auto w-full max-w-md">
-      <div className="absolute -inset-10 rounded-[3rem] bg-teal/25 blur-3xl" />
-      <div className="relative rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 shadow-2xl shadow-black/40 backdrop-blur">
-        <div className="relative flex h-60 gap-2.5 rounded-2xl border-2 border-white/25 p-3">
-          <span className="absolute -right-[11px] top-1/2 h-16 w-2.5 -translate-y-1/2 rounded-r-md bg-white/25" />
-          {chargeLevels.map((level) => (
-            <div
-              key={level}
-              className="relative flex-1 overflow-hidden rounded-lg bg-white/[0.06]"
-            >
-              <div
-                className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-teal to-volt"
-                style={{ height: `${level}%` }}
-              />
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-8 flex flex-wrap gap-2">
-          {["Electric Mobility", "Telecommunications", "Renewable Energy"].map(
-            (label) => (
-              <span
-                key={label}
-                className="rounded-full border border-white/15 px-3.5 py-1.5 text-xs font-medium text-white/80"
-              >
-                {label}
-              </span>
-            ),
-          )}
-        </div>
-      </div>
+    <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl shadow-black/40">
+      <img
+        src={HERO_IMAGE_URL}
+        alt="AxiWatt battery energy storage solution"
+        className="h-full w-full object-cover"
+      />
     </div>
   );
 }
@@ -153,7 +129,7 @@ export default function Index() {
             </div>
           </div>
 
-          <BatteryVisual />
+          <HeroVisual />
         </div>
       </section>
 
@@ -196,8 +172,8 @@ export default function Index() {
 
           <ul className="grid gap-x-10 gap-y-12 sm:grid-cols-2">
             {reasons.map((reason, index) => (
-              <li key={reason.title} className="flex gap-5">
-                <span className="font-display text-sm font-bold text-teal">
+              <li key={reason.title} className="flex gap-6">
+                <span className="w-12 shrink-0 font-display text-3xl font-bold leading-none text-teal">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <div>
