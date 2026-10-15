@@ -13,7 +13,14 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["Space Grotesk", "Inter", "ui-sans-serif", "sans-serif"],
+      },
       colors: {
+        ink: "hsl(var(--ink))",
+        volt: "hsl(var(--volt))",
+        teal: "hsl(var(--teal))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
