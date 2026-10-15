@@ -14,10 +14,10 @@
   */
   :root {
     --ink: 222 47% 11%;
-    --volt: 76 62% 56%;
-    --teal: 172 45% 36%;
+    --volt: 152 85% 63%;
+    --teal: 215 16% 47%;
 
-    --background: 40 20% 98%;
+    --background: 210 40% 98%;
     --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
@@ -29,21 +29,21 @@
     --primary: 222 47% 11%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 160 30% 93%;
+    --secondary: 152 60% 94%;
     --secondary-foreground: 222 47% 11%;
 
-    --muted: 60 15% 93%;
-    --muted-foreground: 220 9% 40%;
+    --muted: 210 30% 95%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 76 62% 56%;
+    --accent: 152 85% 63%;
     --accent-foreground: 222 47% 11%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 88%;
-    --input: 220 13% 88%;
-    --ring: 172 45% 36%;
+    --border: 214 20% 89%;
+    --input: 214 20% 89%;
+    --ring: 215 16% 47%;
 
     --radius: 0.75rem;
 
