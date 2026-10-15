@@ -5,10 +5,36 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
+const ADDRESS = [
+  "Plot no. 102, 103",
+  "Sri Krishna Vihar, Temple Lane",
+  "Mythri Nagar Phase-2, Serillingampally",
+  "Miyapur Sub Post Office",
+  "Hyderabad, Rangareddy, Telangana 500049",
+];
+
+const MAP_QUERY = ADDRESS.join(", ");
+const MAP_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&output=embed`;
+
 const contactDetails = [
-  { icon: Mail, label: "Email" },
-  { icon: Phone, label: "Phone" },
-  { icon: MapPin, label: "Registered Office" },
+  {
+    icon: Mail,
+    label: "Email",
+    value: "contact@axiwatt.com",
+    href: "mailto:contact@axiwatt.com",
+  },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "+91 95530 29624",
+    href: "tel:+919553029624",
+  },
+  {
+    icon: MapPin,
+    label: "Registered Office",
+    value: ADDRESS.join(", "),
+    href: undefined,
+  },
 ];
 
 const enquiryPoints = [
@@ -131,9 +157,18 @@ export default function Contact() {
                     <p className="text-sm font-medium text-white/60">
                       {detail.label}
                     </p>
-                    <p className="mt-1 font-medium text-white">
-                      To be notified
-                    </p>
+                    {detail.href ? (
+                      <a
+                        href={detail.href}
+                        className="mt-1 block font-medium text-white hover:text-volt"
+                      >
+                        {detail.value}
+                      </a>
+                    ) : (
+                      <p className="mt-1 font-medium text-white">
+                        {detail.value}
+                      </p>
+                    )}
                   </div>
                 </li>
               ))}
@@ -158,6 +193,20 @@ export default function Contact() {
               </ul>
             </div>
           </article>
+        </div>
+      </section>
+
+      <section className="pb-24 lg:pb-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="overflow-hidden rounded-2xl border border-border">
+            <iframe
+              title="AxiWatt office location"
+              src={MAP_EMBED_URL}
+              className="h-96 w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </section>
     </>
