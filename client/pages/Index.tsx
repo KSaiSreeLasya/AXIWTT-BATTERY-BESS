@@ -70,6 +70,20 @@ function HeroVisual() {
         alt="AxiWatt battery energy storage solution"
         className="h-full w-full object-cover"
       />
+      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent p-6 sm:p-8">
+        <div className="flex flex-wrap gap-2">
+          {["Electric Mobility", "Telecommunications", "Renewable Energy"].map(
+            (label) => (
+              <span
+                key={label}
+                className="rounded-full bg-ink/70 px-3.5 py-1.5 text-xs font-medium text-white backdrop-blur"
+              >
+                {label}
+              </span>
+            ),
+          )}
+        </div>
+      </div>
     </div>
   );
 }
@@ -82,7 +96,11 @@ export default function Index() {
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
           <div>
-            <h1 className="text-5xl font-bold leading-[1.05] sm:text-6xl lg:text-7xl">
+            <span className="inline-flex items-center gap-2 rounded-full border border-volt/30 bg-volt/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-volt">
+              <span className="h-1.5 w-1.5 rounded-full bg-volt" />
+              AxiWatt Battery &amp; Energy Storage
+            </span>
+            <h1 className="mt-6 text-5xl font-bold leading-[1.05] sm:text-6xl lg:text-7xl">
               Powering Progress.{" "}
               <span className="text-volt">Energizing the Future.</span>
             </h1>
@@ -96,10 +114,20 @@ export default function Index() {
               combines reliable performance, efficient energy management, and
               sustainability to meet the evolving needs of industries.
             </p>
-            <p className="mt-8 border-l-2 border-volt pl-4 text-sm font-semibold uppercase tracking-wide text-volt sm:text-base">
-              Powering mobility. Strengthening connectivity. Enabling a cleaner
-              energy future.
-            </p>
+            <ul className="mt-8 flex flex-wrap gap-2.5">
+              {[
+                "Powering mobility.",
+                "Strengthening connectivity.",
+                "Enabling a cleaner energy future.",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="rounded-full bg-white/[0.08] px-4 py-2 text-sm font-medium text-white/90 ring-1 ring-inset ring-white/15"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Button
