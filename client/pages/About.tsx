@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, BadgeCheck, Eye, Layers, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import HeroBackground from "@/components/HeroBackground";
 
 const certifications = [
   { title: "ISO 9001", detail: "Certified Quality Management" },
@@ -34,15 +35,7 @@ export default function About() {
   return (
     <>
       <section className="relative overflow-hidden bg-ink text-white">
-        <div
-          className="absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
-            backgroundSize: "56px 56px",
-          }}
-        />
-        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-volt/15 blur-3xl" />
+        <HeroBackground />
         <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
           <div className="flex items-center gap-4">
             <span className="h-px w-10 bg-volt" />

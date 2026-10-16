@@ -7,6 +7,7 @@ import {
   RefreshCw,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import HeroBackground from "@/components/HeroBackground";
 
 const solutions = [
   {
@@ -77,14 +78,7 @@ export default function Index() {
   return (
     <>
       <section className="relative overflow-hidden bg-ink text-white">
-        <div
-          className="absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
-            backgroundSize: "56px 56px",
-          }}
-        />
+        <HeroBackground />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
           <div>
