@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const products = [
   {
@@ -81,6 +82,13 @@ const reasons = [
 ];
 
 export default function Products() {
+  usePageMeta({
+    title: "Battery Storage Products and BESS Solutions | AxiWatt",
+    description:
+      "Explore battery storage products and energy storage solutions for commercial facilities, industrial operations, and renewable power applications.",
+    path: "/products",
+  });
+
   return (
     <>
       <PageHero

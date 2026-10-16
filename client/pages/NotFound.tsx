@@ -1,9 +1,16 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const NotFound = () => {
   const location = useLocation();
+
+  usePageMeta({
+    title: "Page Not Found | AxiWatt",
+    description: "The page you are looking for does not exist or has moved.",
+    noindex: true,
+  });
 
   useEffect(() => {
     console.error(

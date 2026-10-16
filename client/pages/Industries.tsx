@@ -1,6 +1,7 @@
 import { Building2, Car, Factory, RadioTower, Sun } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const industries = [
   {
@@ -36,6 +37,13 @@ const industries = [
 ];
 
 export default function Industries() {
+  usePageMeta({
+    title: "Battery Storage for Industries | AxiWatt",
+    description:
+      "Explore AxiWatt battery storage solutions for electric mobility, telecommunications, renewable energy, and industrial power applications.",
+    path: "/industries",
+  });
+
   return (
     <>
       <PageHero

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const ADDRESS = [
   "Plot no. 102, 103",
@@ -38,6 +39,13 @@ const applicationTypes = [
 ];
 
 export default function Contact() {
+  usePageMeta({
+    title: "Contact AxiWatt | Battery Storage Enquiries",
+    description:
+      "Contact AxiWatt for enquiries about battery energy storage systems, commercial and industrial energy solutions, renewable energy integration, and project requirements.",
+    path: "/contact",
+  });
+
   return (
     <>
       <PageHero

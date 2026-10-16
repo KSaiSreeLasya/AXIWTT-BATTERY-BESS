@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import HeroBackground from "@/components/HeroBackground";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const solutions = [
   {
@@ -89,6 +90,13 @@ function HeroVisual() {
 }
 
 export default function Index() {
+  usePageMeta({
+    title: "AxiWatt | Battery Energy Storage Systems (BESS)",
+    description:
+      "Explore AxiWatt battery energy storage systems for efficient power management, renewable energy integration, and reliable energy storage solutions for commercial and industrial applications.",
+    path: "/",
+  });
+
   return (
     <>
       <section className="relative overflow-hidden bg-ink text-white">

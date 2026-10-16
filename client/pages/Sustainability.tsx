@@ -1,6 +1,7 @@
 import { Leaf, Plug, Recycle, TrendingUp, Zap } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const focusAreas = [
   {
@@ -36,6 +37,13 @@ const focusAreas = [
 ];
 
 export default function Sustainability() {
+  usePageMeta({
+    title: "Sustainable Energy Storage and Clean Energy | AxiWatt",
+    description:
+      "Learn how battery energy storage can support renewable electricity utilization, energy efficiency, and the transition toward more sustainable power systems.",
+    path: "/sustainability",
+  });
+
   return (
     <>
       <PageHero

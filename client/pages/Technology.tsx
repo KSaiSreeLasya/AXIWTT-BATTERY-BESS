@@ -1,6 +1,7 @@
 import { Battery, Gauge, Network, ShieldCheck } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const pillars = [
   {
@@ -30,6 +31,13 @@ const pillars = [
 ];
 
 export default function Technology() {
+  usePageMeta({
+    title: "Battery Storage Technology and BESS Systems | AxiWatt",
+    description:
+      "Explore battery storage technologies, energy conversion systems, and intelligent power management approaches for modern energy storage applications.",
+    path: "/technology",
+  });
+
   return (
     <>
       <PageHero

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, BadgeCheck, Eye, Layers, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import HeroBackground from "@/components/HeroBackground";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const certifications = [
   { title: "ISO 9001", detail: "Certified Quality Management" },
@@ -32,6 +33,13 @@ const principles = [
 ];
 
 export default function About() {
+  usePageMeta({
+    title: "About AxiWatt | Energy Storage Solutions",
+    description:
+      "Learn about AxiWatt and our approach to battery energy storage, renewable energy integration, and modern power management solutions for businesses and industries.",
+    path: "/about",
+  });
+
   return (
     <>
       <section className="relative overflow-hidden bg-ink text-white">
