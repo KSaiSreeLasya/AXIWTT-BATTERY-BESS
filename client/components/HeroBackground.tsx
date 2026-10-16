@@ -1,21 +1,22 @@
 export default function HeroBackground() {
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-      <div className="absolute inset-0 bg-gradient-to-br from-ink via-[#17233d] to-ink" />
+      <div className="absolute inset-0 bg-gradient-to-br from-ink via-[#16213a] to-ink" />
       <div
-        className="absolute inset-0 opacity-[0.07]"
+        className="absolute inset-0"
         style={{
-          backgroundImage:
-            "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
-          backgroundSize: "56px 56px",
-          maskImage:
-            "radial-gradient(ellipse at center, black 30%, transparent 75%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+          background:
+            "radial-gradient(ellipse 60% 70% at 85% 0%, hsl(152 85% 63% / 0.18), transparent 70%), radial-gradient(ellipse 50% 60% at 0% 100%, hsl(215 16% 47% / 0.22), transparent 70%)",
         }}
       />
-      <div className="absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-volt/20 blur-3xl" />
-      <div className="absolute -bottom-40 -left-32 h-[28rem] w-[28rem] rounded-full bg-teal/25 blur-3xl" />
+      <div
+        className="absolute inset-0 opacity-60"
+        style={{
+          background:
+            "linear-gradient(115deg, transparent 35%, hsl(0 0% 100% / 0.04) 50%, transparent 65%)",
+        }}
+      />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-volt/60 to-transparent" />
     </div>
   );
 }
