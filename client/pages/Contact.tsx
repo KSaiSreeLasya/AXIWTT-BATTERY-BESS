@@ -18,7 +18,7 @@ const ADDRESS = [
 
 const EMAILJS_PUBLIC_KEY = "uP1-VYu2Ym0M4bg-G";
 const EMAILJS_SERVICE_ID = "service_etsdhvj";
-const EMAILJS_TEMPLATE_ID = "template_cwilim";
+const EMAILJS_TEMPLATE_ID = "template_cwilime";
 
 const MAP_EMBED_URL =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97194.29103055871!2d78.2023861433594!3d17.49208919999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93bf2afb32d9%3A0xd1bd4bfab424b231!2sSri%20Krishna%20Vihar!5e1!3m2!1sen!2sin!4v1792066357999!5m2!1sen!2sin";
