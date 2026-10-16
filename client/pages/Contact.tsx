@@ -1,3 +1,5 @@
+import { useRef, useState, type FormEvent } from "react";
+import emailjs from "@emailjs/browser";
 import { Check, Mail, MapPin, Phone } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
@@ -13,6 +15,10 @@ const ADDRESS = [
   "Miyapur Sub Post Office",
   "Hyderabad, Rangareddy, Telangana 500049",
 ];
+
+const EMAILJS_PUBLIC_KEY = "uP1-VYu2Ym0M4bg-G";
+const EMAILJS_SERVICE_ID = "service_etsdhvj";
+const EMAILJS_TEMPLATE_ID = "template_cwilime";
 
 const MAP_EMBED_URL =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97194.29103055871!2d78.2023861433594!3d17.49208919999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93bf2afb32d9%3A0xd1bd4bfab424b231!2sSri%20Krishna%20Vihar!5e1!3m2!1sen!2sin!4v1792066357999!5m2!1sen!2sin";
@@ -38,6 +44,8 @@ const applicationTypes = [
   "Other",
 ];
 
+type SubmitStatus = "idle" | "sending" | "success" | "error";
+
 export default function Contact() {
   usePageMeta({
     title: "Contact AxiWatt | Battery Storage Enquiries",
@@ -45,6 +53,28 @@ export default function Contact() {
       "Contact AxiWatt for enquiries about battery energy storage systems, commercial and industrial energy solutions, renewable energy integration, and project requirements.",
     path: "/contact",
   });
+
+  const formRef = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<SubmitStatus>("idle");
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!formRef.current || status === "sending") return;
+
+    setStatus("sending");
+    try {
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        { publicKey: EMAILJS_PUBLIC_KEY },
+      );
+      formRef.current.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  };
 
   return (
     <>
@@ -70,8 +100,9 @@ export default function Contact() {
           <article className="rounded-2xl border border-border bg-card p-8 lg:p-10">
             <h2 className="text-2xl font-semibold text-ink">Send an Enquiry</h2>
             <form
+              ref={formRef}
               className="mt-8 grid gap-5 sm:grid-cols-2"
-              onSubmit={(event) => event.preventDefault()}
+              onSubmit={handleSubmit}
             >
               <div className="grid gap-2">
                 <Label htmlFor="name">Full name</Label>
@@ -126,10 +157,21 @@ export default function Contact() {
                 <Button
                   type="submit"
                   size="lg"
+                  disabled={status === "sending"}
                   className="h-12 rounded-full bg-ink px-8 text-base text-white hover:bg-ink/90"
                 >
-                  Submit Enquiry
+                  {status === "sending" ? "Sending..." : "Submit Enquiry"}
                 </Button>
+                {status === "success" && (
+                  <p role="status" className="mt-4 text-sm font-medium text-teal">
+                    Thank you. Your enquiry has been sent and our team will be in touch.
+                  </p>
+                )}
+                {status === "error" && (
+                  <p role="alert" className="mt-4 text-sm font-medium text-destructive">
+                    Sorry, your enquiry could not be sent. Please try again or email contact@axiwatt.com.
+                  </p>
+                )}
               </div>
             </form>
           </article>
